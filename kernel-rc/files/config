@@ -4721,18 +4721,3 @@ CONFIG_X86_DEBUG_FPU=y
 CONFIG_UNWINDER_ORC=y
 # CONFIG_UNWINDER_FRAME_POINTER is not set
 # end of Kernel hacking
-
-#
-# Gentoo Linux
-#
-CONFIG_GENTOO_LINUX=y
-CONFIG_GENTOO_LINUX_UDEV=y
-CONFIG_GENTOO_LINUX_PORTAGE=y
-
-#
-# Support for init systems, system and service managers
-#
-CONFIG_GENTOO_LINUX_INIT_SCRIPT=y
-# CONFIG_GENTOO_LINUX_INIT_SYSTEMD is not set
-# end of Support for init systems, system and service managers
-# end of Gentoo Linux
