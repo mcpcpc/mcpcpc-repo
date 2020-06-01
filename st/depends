@@ -1,5 +1,4 @@
 fontconfig
-freetype-harfbuzz
 libX11
 libXft
-ncurses make
+ncurses    make
