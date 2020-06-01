@@ -1,0 +1,25 @@
+#!/bin/sh -e
+
+kernver="$(cat version)"
+modulesdir="$1/usr/lib/modules/$kernver"
+builddir="$modulesdir/build"
+
+for patch in *.patch; do
+    patch -p1 < $patch
+done
+
+cp config .config
+
+echo "Making linux-"$kernver""
+make -j "$(nproc)"
+
+echo "Installing modules..."
+make modules_install
+
+make install
+
+echo "Installing kernel..."
+rm "/boot/vmlinuz-*"
+rm "/boot/System.map-*" 
+mv "/boot/vmlinuz" "/boot/vmlinuz-$kernver"
+mv "/boot/System.map" "/boot/System.map-$kernver"
