@@ -10,8 +10,14 @@ done
 
 cp config .config
 
+echo "Making linux-"$kernver""
 make -j "$(nproc)"
 
+echo "Installing modules..."
 make modules_install
 
 make install
+
+echo "Installing kernel..."
+mv "/boot/vmlinuz" "/boot/vmlinuz-$kernver"
+mv "/boot/System.map" "/boot/System.map-$kernver"
