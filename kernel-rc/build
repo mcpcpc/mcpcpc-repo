@@ -1,8 +1,14 @@
 #!/bin/sh -e
 
+kernver="$(cat version)"
+modulesdir="$1/usr/lib/modules/$kernver"
+builddir="$modulesdir/build"
+
 for patch in *.patch; do
     patch -p1 < $patch
 done
+
+cp config .config
 
 make -j "$(nproc)"
 
