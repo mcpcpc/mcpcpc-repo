@@ -19,5 +19,7 @@ make modules_install
 make install
 
 echo "Installing kernel..."
+rm "/boot/vmlinuz-*"
+rm "/boot/System.map-*" 
 mv "/boot/vmlinuz" "/boot/vmlinuz-$kernver"
 mv "/boot/System.map" "/boot/System.map-$kernver"
