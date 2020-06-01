@@ -5,3 +5,7 @@ for patch in *.patch; do
 done
 
 make -j "$(nproc)"
+
+make modules_install
+
+make install
