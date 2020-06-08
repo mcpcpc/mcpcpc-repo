@@ -18,9 +18,9 @@ interface:
 $ dhcpcd INTERFACE
 
 Remember to replace INTERFACE in the command above with the name of the device 
-of which you wish to configure.
+that you wish to configure.
 
-A network device's interface status can be inspected via the ip-link:
+A network device's interface status can be inspected via ip-link:
 
 $ ip link show dev INTERFACE
 
@@ -33,13 +33,13 @@ $ ip link set INTERFACE up    # enables the interface
 Configuration, Static IP
 ________________________________________________________________________________
 
-Continuing from the previous section, w cab use ip-address to display the 
+Continuing from the previous section, we can use ip-address to display the 
 current DHCP address information:
 
 $ ip address show
 
-Using the output of this command, add the following lines to the /etc/dhcpcd.conf 
-file using your preferred text editor:
+Using the output of the previous command, add the following lines to the 
+/etc/dhcpcd.conf file using your preferred text editor:
 
 +------------------------------------------------------------------------------+
 |                                                                              |
@@ -53,6 +53,7 @@ file using your preferred text editor:
 Remember to replace the INTERFACE, STATIC_IP, GATEWAY, and DNS_SERVER in the
 block above with your own parameters. 
 
+
 Hostname
 ________________________________________________________________________________
 
@@ -62,7 +63,7 @@ $ echo "HOSTNAME" > /etc/hostname
 
 Remember to replace HOSTNAME with the string of your choosing.  
 
-Note: Valid characters for hostnames include ASCII letters from a to z, digits 
+Note: Valid characters for hostnames include ASCII letters from A to Z, digits 
       from 0 to 9, and the hyphen character (-). A hostname may not start with 
       a hyphen.
 
