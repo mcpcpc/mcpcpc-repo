@@ -18,29 +18,27 @@ interface:
 $ dhcpcd INTERFACE
 
 Remember to replace INTERFACE in the command above with the name of the device 
-of which you wish to use.
+of which you wish to configure.
 
 A network device's interface status can be inspected via the ip-link:
 
 $ ip link show dev INTERFACE
 
-Through the same principle, ip-link can also be used to enable or disable an
-interface:
+ip-link can also be used to enable or disable an interface:
 
-$ ip link set INTERFACE down # disables the interface
-$ ip link set INTERFACE up   # enables the interface
+$ ip link set INTERFACE down  # disables the interface
+$ ip link set INTERFACE up    # enables the interface
 
 
 Configuration, Static IP
 ________________________________________________________________________________
 
-By default, dhcpcd assigns a dynamic IP address (DHCP) to a given interface. A 
-static IP address can also be assigned through the same principle. First, use 
-ip-address to display the current DHCP address information:
+Continuing from the previous section, w cab use ip-address to display the 
+current DHCP address information:
 
 $ ip address show
 
-Use the output of this command, add the following lines to the /etc/dhcpcd.conf 
+Using the output of this command, add the following lines to the /etc/dhcpcd.conf 
 file using your preferred text editor:
 
 +------------------------------------------------------------------------------+
@@ -66,7 +64,7 @@ Remember to replace HOSTNAME with the string of your choosing.
 
 Note: Valid characters for hostnames include ASCII letters from a to z, digits 
       from 0 to 9, and the hyphen character (-). A hostname may not start with 
-	    a hyphen.
+      a hyphen.
 
 
 Managed via runsv
@@ -89,20 +87,15 @@ ________________________________________________________________________________
 
   $ ls /sys/class/net
   
-* The ping command can be used to verify connectivity through a network device 
+* The ping command can be used to verify connectivity with a network device 
   interface:
   
   $ ping www.google.com
 
-* Some network administrators require that the hostname and domainname provided
+* Some network administrators require that the hostname and domain name provided
   by the DHCP server is used by the system. In that case, pass the "-HD" switch:
   
   $ dhcpcd -HD INTERFACE
-  
-* To be able to surf on the Internet, each computer in the network must know 
-  which host shares the Internet connection. This host is called the gateway. 
-  Since it is a regular host, it has a regular IP address (for instance 
-  192.168.0.1).
 
 * If you are not sure what to put in the STATIC_IP, GATEWAY, and DNS_SERVER, you
   can use the following example for reference:
