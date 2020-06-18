@@ -2,4 +2,3 @@ fontconfig
 libX11
 libXft
 ncurses    make
-scroll
