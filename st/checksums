@@ -1,2 +1,2 @@
-939ae3da237e7c9489694853c205c7cbd5f2a2f0c17fe41a07477f1df8e28552  st-0.8.3.tar.gz
-893e47943c95340a0cac9b10593f90d6f53a6735e387df29d6caa6a458344b78  st-scroll.patch
+git  git+https://git.suckless.org/st
+39d95a32bfee2bee6d203a0dae91f5af4865df95e25c2077dc4355ce1a65cd00  config.h
